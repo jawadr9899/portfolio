@@ -1,5 +1,179 @@
-import { useState, type JSX } from "react";
+import { useState, useRef, useEffect, useCallback, type JSX } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+const BeautyWaves = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLCanvasElement>) => {
+    const rect = canvasRef.current?.getBoundingClientRect();
+    if (rect) setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  }, []);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    
+    let animationFrameId: number;
+    let time = 0;
+
+    const languages = ["Rust", "JS", "TS", "C++", "Phyton", "Java", "⚛️", "🦀", "🐍", "☕"];
+    
+    // Structure for floating icons emitted from excited particles
+    const floatingIcons: { x: number, y: number, text: string, life: number, maxLife: number, vx: number, vy: number, color: string }[] = [];
+
+    // Generate static particle properties so they persist across frames
+    const particles = Array.from({ length: 150 }).map((_, i) => ({
+      id: i,
+      baseX: Math.random() * canvas.width,
+      baseY: Math.random() * canvas.height,
+      phase: Math.random() * Math.PI * 2,
+      speedX: 0.2 + Math.random() * 0.5,
+      frequency: 0.01 + Math.random() * 0.02,
+      amplitude: 20 + Math.random() * 50,
+      colorIndex: Math.floor(Math.random() * 5),
+    }));
+
+    const draw = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      time += 0.05;
+
+      const colors = ['#f85149', '#58a6ff', '#3fb950', '#d2a8ff', '#a5d6ff'];
+
+      // Draw waves
+      for (let i = 0; i < 5; i++) {
+        ctx.beginPath();
+        ctx.moveTo(0, canvas.height / 2);
+        
+        for (let x = 0; x < canvas.width; x += 5) {
+          const distanceToMouse = Math.abs(x - mousePos.x);
+          const mouseInfluence = Math.max(0, 100 - distanceToMouse) / 100;
+          
+          let y = canvas.height / 2;
+          
+          if (i === 0) y += Math.sin(x * 0.02 + time) * 30 * (1 + mouseInfluence);
+          else if (i === 1) y += Math.cos(x * 0.015 - time) * 40 * (1 + mouseInfluence * 1.5);
+          else if (i === 2) y += Math.tan((x * 0.01 + time) % Math.PI) * 10 * (1 + mouseInfluence);
+          else if (i === 3) y += Math.sin(x * 0.03 + time * 2) * Math.cos(x * 0.02) * 50 * (1 + mouseInfluence * 2);
+          else y += Math.sin(x * 0.01 + time) * 60 * (1 + mouseInfluence);
+          
+          ctx.lineTo(x, y);
+        }
+        
+        ctx.strokeStyle = colors[i % colors.length];
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+
+      // Draw floating Schrodinger particles
+      particles.forEach((p) => {
+        // Base probability wave motion
+        p.baseX -= p.speedX;
+        if (p.baseX < -10) p.baseX = canvas.width + 10;
+        
+        // Probability amplitude offset
+        const waveYOffset = Math.sin(p.baseX * p.frequency + time + p.phase) * p.amplitude;
+        
+        let drawX = p.baseX;
+        let drawY = canvas.height / 2 + waveYOffset;
+
+        // Observation effect / Quantum collapse when mouse is near
+        const dx = drawX - mousePos.x;
+        const dy = drawY - mousePos.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        let radius = 1.5 + Math.sin(time * 3 + p.phase) * 0.5; // Normal oscillation
+        let alpha = 0.5;
+
+        if (dist < 150) {
+            const collapseFactor = (150 - dist) / 150; // closer = stronger pull
+            // Particles get pulled tightly towards the cursor (observation collapse)
+            drawX -= dx * collapseFactor * 0.8;
+            drawY -= dy * collapseFactor * 0.8;
+            
+            // Excite particle state
+            radius = 2 + collapseFactor * 3;
+            alpha = 0.5 + collapseFactor * 0.5;
+        }
+
+        ctx.beginPath();
+        ctx.arc(drawX, drawY, radius, 0, Math.PI * 2);
+        
+        // Use parsed colors or hex to add opacity
+        const baseColor = colors[p.colorIndex];
+        // simple hex to rgba matching
+        let rgb = '255,255,255';
+        if (baseColor === '#f85149') rgb = '248,81,73';
+        if (baseColor === '#58a6ff') rgb = '88,166,255';
+        if (baseColor === '#3fb950') rgb = '63,185,80';
+        if (baseColor === '#d2a8ff') rgb = '210,168,255';
+        if (baseColor === '#a5d6ff') rgb = '165,214,255';
+        
+        ctx.fillStyle = `rgba(${rgb}, ${alpha})`;
+        ctx.shadowColor = baseColor;
+        ctx.shadowBlur = dist < 150 ? 10 : 3;
+        ctx.fill();
+        ctx.shadowBlur = 0; // reset
+
+        // Particles near the cursor "spark" and release an icon
+        if (dist < 80 && Math.random() < 0.03 && floatingIcons.length < 40) {
+           floatingIcons.push({
+             x: drawX,
+             y: drawY,
+             text: languages[Math.floor(Math.random() * languages.length)],
+             color: baseColor,
+             life: 80,
+             maxLife: 80,
+             vx: (Math.random() - 0.5) * 1.5,
+             vy: (Math.random() - 1) * 2 - 0.5,
+           });
+        }
+      });
+
+      // Draw floating icons
+      for (let i = floatingIcons.length - 1; i >= 0; i--) {
+        const icon = floatingIcons[i];
+        icon.x += icon.vx;
+        icon.y += icon.vy;
+        icon.life -= 1;
+        
+        if (icon.life <= 0) {
+          floatingIcons.splice(i, 1);
+          continue;
+        }
+
+        const iconAlpha = icon.life / icon.maxLife;
+        ctx.font = "bold 13px monospace";
+        ctx.fillStyle = icon.color;
+        ctx.globalAlpha = iconAlpha;
+        ctx.fillText(icon.text, icon.x, icon.y);
+      }
+      ctx.globalAlpha = 1.0; // Reset globalAlpha
+
+      animationFrameId = requestAnimationFrame(draw);
+    };
+
+    draw();
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [mousePos]);
+
+  return (
+    <div className="w-full flex-col h-full flex items-center justify-center pt-8">
+      <p className="text-[#8b949e] mb-4 italic">// Interactive R Data Visualizations ~ hover across quantum fields</p>
+      <canvas 
+        ref={canvasRef}
+        width={600} 
+        height={400} 
+        className="bg-transparent cursor-crosshair"
+        onMouseMove={handleMouseMove}
+        onMouseLeave={() => setMousePos({ x: -1000, y: -1000 })} // Move out of range when left
+      />
+    </div>
+  );
+};
 
 const MiniGame = () => {
   const initialNodes = [
@@ -167,6 +341,11 @@ const filesContent: Record<string, () => JSX.Element> = {
       <div><span className="text-[#ff7b72] font-bold">impl</span> <span className="text-[#d2a8ff]">Engineer</span> <span className="text-[#ff7b72] font-bold">for</span> <span className="text-[#58a6ff]">Jawad</span> {'{'}</div>
       <div className="pl-4"><span className="text-[#8b949e] italic">// Loves Low Level Engineering Building High Performance Systems</span></div>
       <div>{'}'}</div>
+    </>
+  ),
+  "beauty.r": () => (
+    <>
+      <BeautyWaves />
     </>
   ),
   "skills.cpp": () => (
