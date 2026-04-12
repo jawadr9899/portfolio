@@ -1,4 +1,4 @@
-import { useState, useRef, type JSX } from "react";
+import { useState, type JSX } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const MiniGame = () => {
@@ -134,28 +134,39 @@ const filesContent: Record<string, () => JSX.Element> = {
   ),
   "projects.ts": () => (
     <>
-      <div><span className="text-[#8b949e] italic">{`/**\n * @author Jawad\n * @role Polyglot Systems & Web Engineer\n */`}</span></div>
-      <br />
       <div><span className="text-[#ff7b72] font-bold">const</span> <span className="text-[#79c0ff]">projects</span>: <span className="text-[#58a6ff]">Project</span>[] = [</div>
-      {/* teyrs */}
       <div className="pl-4">
         {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"teyrs"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Rust"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/teyrs" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/teyrs"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"Terminal-based file explorer"</span> {`},`}
       </div>
-      {/* Rustle */}
       <div className="pl-4">
-        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"Rustle"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Rust"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="#" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/Rustle"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"CLI tool for saving notes"</span> {`},`}
+        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"Rustle"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Rust"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/Rustle" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/Rustle"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"CLI tool for saving notes"</span> {`},`}
       </div>
-       {/* ascii-c */}
-       <div className="pl-4">
-        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"ascii-c"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"C"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="#" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/ascii-c"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"Convert images into ASCII art"</span> {`},`}
-      </div>
-      {/* Pyxoim */}
       <div className="pl-4">
-        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"Pyxoim"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Python"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="#" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/Pyxoim"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"Text Editor with Xtra functionalities"</span> {`},`}
+        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"ascii-c"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"C"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/ascii-c" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/ascii-c"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"Convert images into ASCII art"</span> {`},`}
       </div>
-      {/* Java Servlets */}
       <div className="pl-4">
-        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"servlets---admin-dashboard"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Java"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="#" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/webdashboard"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"JSP/Tomcat embedded dashboard"</span> {`},`}
+        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"Pyxoim"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Python"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/Pyxoim" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/Pyxoim"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"Text Editor with Xtra functionalities"</span> {`},`}
+      </div>
+      <div className="pl-4">
+        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"servlets-admin-dashboard"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Java"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/webdashboard" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/webdashboard"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"JSP/Tomcat embedded dashboard"</span> {`},`}
+      </div>
+      <div className="pl-4">
+        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"Snayke"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"C++"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/Snayke" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/Snayke"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"A simple snake game written in C++"</span> {`},`}
+      </div>
+      <div className="pl-4">
+        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"URL-Shortener"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Unknown"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/URL-Shortener" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/URL-Shortener"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"URL Shortener"</span> {`},`}
+      </div>
+      <div className="pl-4">
+        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"Data-Structures"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Unknown"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/Data-Structures" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/Data-Structures"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"Data Structures & Algorithms"</span> {`},`}
+      </div>
+      <div className="pl-4">
+        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"entry-test-system"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Unknown"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/entry-test-system" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/entry-test-system"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"Entry test system"</span> {`},`}
+      </div>
+      <div className="pl-4">
+        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"teacher-feedback-system"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Unknown"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/teacher-feedback-system" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/teacher-feedback"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"Teacher Feedback System"</span> {`},`}
+      </div>
+      <div className="pl-4">
+        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"faculty-hiring-system"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Unknown"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/faculty-hiring-system" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/faculty-hiring"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"Faculty Hiring System"</span> {`},`}
       </div>
       <div>];</div>
     </>
