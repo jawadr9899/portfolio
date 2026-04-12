@@ -132,45 +132,33 @@ const filesContent: Record<string, () => JSX.Element> = {
       </p>
     </motion.div>
   ),
-  "projects.ts": () => (
-    <>
-      <div><span className="text-[#ff7b72] font-bold">const</span> <span className="text-[#79c0ff]">projects</span>: <span className="text-[#58a6ff]">Project</span>[] = [</div>
-      <div className="pl-4">
-        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"teyrs"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Rust"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/teyrs" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/teyrs"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"Terminal-based file explorer"</span> {`},`}
-      </div>
-      <div className="pl-4">
-        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"Rustle"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Rust"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/Rustle" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/Rustle"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"CLI tool for saving notes"</span> {`},`}
-      </div>
-      <div className="pl-4">
-        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"ascii-c"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"C"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/ascii-c" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/ascii-c"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"Convert images into ASCII art"</span> {`},`}
-      </div>
-      <div className="pl-4">
-        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"Pyxoim"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Python"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/Pyxoim" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/Pyxoim"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"Text Editor with Xtra functionalities"</span> {`},`}
-      </div>
-      <div className="pl-4">
-        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"servlets-admin-dashboard"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Java"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/webdashboard" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/webdashboard"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"JSP/Tomcat embedded dashboard"</span> {`},`}
-      </div>
-      <div className="pl-4">
-        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"Snayke"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"C++"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/Snayke" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/Snayke"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"A simple snake game written in C++"</span> {`},`}
-      </div>
-      <div className="pl-4">
-        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"URL-Shortener"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Unknown"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/URL-Shortener" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/URL-Shortener"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"URL Shortener"</span> {`},`}
-      </div>
-      <div className="pl-4">
-        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"Data-Structures"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Unknown"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/Data-Structures" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/Data-Structures"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"Data Structures & Algorithms"</span> {`},`}
-      </div>
-      <div className="pl-4">
-        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"entry-test-system"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Unknown"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/entry-test-system" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/entry-test-system"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"Entry test system"</span> {`},`}
-      </div>
-      <div className="pl-4">
-        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"teacher-feedback-system"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Unknown"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/teacher-feedback-system" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/teacher-feedback"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"Teacher Feedback System"</span> {`},`}
-      </div>
-      <div className="pl-4">
-        {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"faculty-hiring-system"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"Unknown"</span>, <span className="text-[#79c0ff]">repo</span>: <a href="https://github.com/jawadr9899/faculty-hiring-system" target="_blank" className="text-[#a5d6ff] border-b border-transparent hover:border-[#58a6ff] hover:text-white transition-all">"github/faculty-hiring"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"Faculty Hiring System"</span> {`},`}
-      </div>
-      <div>];</div>
-    </>
-  ),
+  "projects.ts": () => {
+    const projectsList = [
+      { name: "teyrs", lang: "Rust", repo: "https://github.com/jawadr9899/teyrs", repoLabel: "github/teyrs", desc: "Terminal-based file explorer" },
+      { name: "Rustle", lang: "Rust", repo: "https://github.com/jawadr9899/Rustle", repoLabel: "github/Rustle", desc: "CLI tool for saving notes" },
+      { name: "ascii-c", lang: "C", repo: "https://github.com/jawadr9899/ascii-c", repoLabel: "github/ascii-c", desc: "Convert images into ASCII art" },
+      { name: "Pyxoim", lang: "Python", repo: "https://github.com/jawadr9899/Pyxoim", repoLabel: "github/Pyxoim", desc: "Text Editor with Xtra functionalities" },
+      { name: "servlets-admin-dashboard", lang: "Java", repo: "https://github.com/jawadr9899/webdashboard", repoLabel: "github/webdashboard", desc: "JSP/Tomcat embedded dashboard" },
+      { name: "Snayke", lang: "C++", repo: "https://github.com/jawadr9899/Snayke", repoLabel: "github/Snayke", desc: "A simple snake game written in C++" },
+      { name: "URL-Shortener", lang: "Unknown", repo: "https://github.com/jawadr9899/URL-Shortener", repoLabel: "github/URL-Shortener", desc: "URL Shortener" },
+      { name: "Data-Structures", lang: "Unknown", repo: "https://github.com/jawadr9899/Data-Structures", repoLabel: "github/Data-Structures", desc: "Data Structures & Algorithms" },
+      { name: "entry-test-system", lang: "Unknown", repo: "https://github.com/jawadr9899/entry-test-system", repoLabel: "github/entry-test-system", desc: "Entry test system" },
+      { name: "teacher-feedback-system", lang: "Unknown", repo: "https://github.com/jawadr9899/teacher-feedback-system", repoLabel: "github/teacher-feedback", desc: "Teacher Feedback System" },
+      { name: "faculty-hiring-system", lang: "Unknown", repo: "https://github.com/jawadr9899/faculty-hiring-system", repoLabel: "github/faculty-hiring", desc: "Faculty Hiring System" }
+    ];
+
+    return (
+      <>
+        <div><span className="text-[#ff7b72] font-bold">const</span> <span className="text-[#79c0ff]">projects</span>: <span className="text-[#58a6ff]">Project</span>[] = [</div>
+        {projectsList.map((p, i) => (
+          <div key={i} className="pl-4">
+            {`{`} <span className="text-[#79c0ff]">name</span>: <span className="text-[#a5d6ff]">"{p.name}"</span>, <span className="text-[#79c0ff]">lang</span>: <span className="text-[#a5d6ff]">"{p.lang}"</span>, <span className="text-[#79c0ff]">repo</span>: <a href={p.repo} target="_blank" className="text-[#a5d6ff] underline underline-offset-4 decoration-[#a5d6ff]/40 hover:decoration-[#a5d6ff] hover:text-white transition-all">"{p.repoLabel}"</a>, <span className="text-[#79c0ff]">desc</span>: <span className="text-[#a5d6ff]">"{p.desc}"</span> {`},`}
+          </div>
+        ))}
+        <div>];</div>
+      </>
+    );
+  },
   "about.rs": () => (
     <>
       <div><span className="text-[#ff7b72] font-bold">pub trait</span> <span className="text-[#d2a8ff]">Engineer</span> {'{'}</div>
@@ -219,7 +207,7 @@ export default function CodeEditor({ activeFile }: { activeFile: string }) {
   return (
     <div className="flex-1 overflow-y-auto bg-transparent text-[14px] p-4 flex z-10 relative custom-scrollbar">
       <div className="w-12 border-r border-white/5 text-[#484f58] text-right pr-4 select-none flex flex-col pt-2 font-mono text-[13px] opacity-70">
-        {Array.from({ length: activeFile === "intro.md" ? 25 : 40 }).map((_, i) => (
+        {Array.from({ length: activeFile === "intro.md" ? 25 : activeFile === "projects.ts" ? 60 : 40 }).map((_, i) => (
           <span key={i} className="leading-7">{i + 1}</span>
         ))}
       </div>
@@ -230,7 +218,7 @@ export default function CodeEditor({ activeFile }: { activeFile: string }) {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -15, transition: { duration: 0.15 } }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className={`flex-1 leading-7 whitespace-pre-wrap pt-2 pl-6 text-[#e6edf3] font-mono tracking-tight overflow-hidden ${activeFile === "intro.md" ? "font-sans" : ""}`}
+          className={`flex-1 leading-7 whitespace-pre-wrap pt-2 pl-6 pb-20 text-[#e6edf3] font-mono tracking-tight ${activeFile === "intro.md" ? "font-sans" : ""}`}
         >
           <ContentComponent />
         </motion.div>
