@@ -287,13 +287,13 @@ const filesContent: Record<string, () => JSX.Element> = {
       </motion.h1>
       
       <p className="text-lg text-[#8b949e] font-medium mb-4">
-        Polyglot Systems & Web Engineer
+        A Polyglot Engineer 
       </p>
       
       <p className="text-[#e6edf3] mb-2 leading-relaxed">
         Welcome to my interactive portfolio! Here is my contact information:
       </p>
-
+    
       <ul className="space-y-1 mb-4 font-mono text-[#e6edf3]">
         <li><span className="text-[#3fb950] mr-2">email:</span> <a href="mailto:jawadd.code@gmail.com" className="text-[#a5d6ff] hover:underline">jawadd.code@gmail.com</a></li>
         <li><span className="text-[#3fb950] mr-2">github:</span> <a href="https://github.com/jawadr9899" className="text-[#a5d6ff] hover:underline" target="_blank">github.com/jawadr9899</a></li>
