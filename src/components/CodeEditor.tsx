@@ -283,11 +283,11 @@ const filesContent: Record<string, () => JSX.Element> = {
         transition={{ delay: 0.2, duration: 0.5 }}
         className="text-3xl font-bold text-white mb-1"
       >
-        Hi, I'm <span className="text-[#58a6ff]">Jawad</span> 👋
+        Hi, I'm <span className="text-[#58a6ff]">Jawad</span> 
       </motion.h1>
       
       <p className="text-lg text-[#8b949e] font-medium mb-4">
-        Polyglot Systems & Web Engineer
+        A Polyglot Engineer
       </p>
       
       <p className="text-[#e6edf3] mb-2 leading-relaxed">
