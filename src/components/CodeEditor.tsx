@@ -287,7 +287,7 @@ const filesContent: Record<string, () => JSX.Element> = {
       </motion.h1>
       
       <p className="text-lg text-[#8b949e] font-medium mb-4">
-        A Polyglot Engineer
+        Polyglot Systems & Web Engineer
       </p>
       
       <p className="text-[#e6edf3] mb-2 leading-relaxed">
