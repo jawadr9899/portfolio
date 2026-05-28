@@ -55,7 +55,7 @@ export default function Portfolio() {
             </button>
           ))}
           <a
-            href="https://docs.google.com/document/d/1vgeLh9Q6GeRVgjB-yY-kT3R9QX4-nr_tWJT72Oxkc-s"
+            href="https://docs.google.com/document/d/19EO1k13fiPfsgOdzQbvGjF7ke4aEZsbHgSxDN_Vf4jw/edit?tab=t.0"
             target="_blank"
             rel="noreferrer"
             className="ml-5 py-2 px-5 bg-black text-[#FAFAFA] text-[13px] font-sans no-underline tracking-wider border border-black transition-colors duration-200 hover:bg-transparent hover:text-black"
