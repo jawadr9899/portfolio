@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   NAV_LINKS,
   CONTACT_LINKS,
@@ -13,31 +13,7 @@ import ContactCard from "./ContactCard";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("about");
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const ids = NAV_LINKS;
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActiveSection(e.target.id);
-        });
-      },
-      { threshold: 0.25 },
-    );
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) obs.observe(el);
-    });
-    return () => obs.disconnect();
-  }, []);
 
   const scrollTo = (id: string) => {
     document
@@ -51,11 +27,7 @@ export default function Portfolio() {
     <div className="font-sans bg-[#FAFAFA] text-black overflow-x-hidden selection:bg-black selection:text-[#FAFAFA]">
       {/* ── NAV ─────────────────────────────────────────── */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 h-[60px] flex items-center justify-between px-[clamp(20px,5vw,80px)] transition-all duration-350 ${
-          scrolled
-            ? "bg-white/95 backdrop-blur-md border-b border-[#EAEAEA]"
-            : "bg-transparent border-b-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 h-[60px] flex items-center justify-between px-[clamp(20px,5vw,80px)] transition-all duration-350 bg-white/95 backdrop-blur-md border-b border-[#EAEAEA]`}
       >
         <button
           onClick={() => scrollTo("about")}
