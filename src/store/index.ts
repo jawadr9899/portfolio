@@ -97,11 +97,11 @@ export const PROJECTS:Project[] = [
 export const SKILLS = [
   {
     label: "Languages",
-    items: ["Python", "TypeScript", "JavaScript", "Rust", "C / C++", "HTML & CSS"],
+    items: ["Python", "TypeScript", "JavaScript", "Rust", "Golang", "C / C++", "HTML & CSS"],
   },
   {
     label: "Backend",
-    items: ["Node.js", "Express", "NestJS", "REST APIs", "Go (basic)", "Django (learning)"],
+    items: ["Node.js", "Express", "NestJS", "REST APIs", "Gin/Echo","Axum", "FastAPI (learning)"],
   },
   {
     label: "Frontend",
